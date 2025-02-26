@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@500&display=swap');
+
+/** Global Styles **/
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/** Body Styling **/
+body {
+    min-height: 100vh;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+/** Header Styling **/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 45px;
+    background:  rgba(24, 24, 24, 0.671);
+}
+
+/** Logo Styling **/
+header h1 {
+    background-image: url('images/logo.webp');
+    background-size: cover;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/** Navigation Styling **/
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/** Navigation Underline Effect **/
+header nav a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 2.5px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header nav a:hover {
+    color: #dd150e;
+}
+
+header nav a:hover::before {
+    transform: scaleX(1);
+}
+
+/** Form Box Styling **/
+.form-box {
+    position: relative;
+    width: 380px;
+    height: 450px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 17px;
+    border: 2px solid rgb(250, 250, 250);
+    border-radius: 17px;
+    transition: transform 0.5s ease, height 0.3s ease-in-out;
+    overflow: hidden;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/** Form Styling **/
+.form-box form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 85%;
+    transition: transform 0.3s ease;
+}
+
+/** Register Form Hidden by Default **/
+.form-box .register-form {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/** Form Title Styling **/
+.form-box form h1 {
+    font-size: 45px;
+}
+
+/** Input Box Styling **/
+.input-box {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: 2px solid white;
+    margin: 17px 0;
+    padding: 0 1px 10px 1px;
+}
+
+.input-box:first-of-type {
+    margin-top: 15px;
+}
+
+/** Adjust Register Form Input Box Margin **/
+.register-form .input-box {
+    margin: 15px 0;
+}
+
+/** Input Fields **/
+.input-box input {
+    width: 85%;
+    position: absolute;
+    color: white;
+    border: none;
+    font-size: 19px;
+    background: transparent;
+    outline: none;
+}
+
+/** Input Label Styling **/
+.input-box label {
+    transition: .4s;
+    font-size: 16px;
+}
+
+/** Input Focus Effect **/
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    transform: translateY(-20px);
+}
+
+/** Input Icon Styling **/
+.input-box ion-icon {
+    font-size: 25px;
+}
+
+/** Checkbox Section **/
+.checkbox {
+    width: 76%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/** Adjust Register Form Checkbox **/
+.register-form .checkbox {
+    display: block;
+}
+
+/** Checkbox Text Styling **/
+.checkbox h5 {
+    font-size: 15px;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.checkbox label {
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.checkbox input {
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+/** Checkbox Container **/
+.checkbox span {
+    display: flex;
+}
+
+/** Submit Button **/
+.submit-btn {
+    width: 75%;
+    height: 38px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 15px 0 22px 0;
+    border: none;
+    font-size: 19px;
+}
+
+/** Login/Register Links **/
+.login-register p {
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-register a {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.login-register a:hover {
+    text-decoration: underline;
+    color: #4b5ae2;
+}
+
+/** Guest Login Links **/
+.login-guest {
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-guest a {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-guest a:hover {
+    text-decoration: underline;
+    color: #4b5ae2;
+}
+
+/** Form Toggle Animation **/
+.change-form {
+    height: 500px;
+}
+
+/** Hide Login Form When Register Form is Active **/
+.change-form .login-form {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/** Show Register Form When Active **/
+.change-form .register-form {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+/** Close Icon Styling **/
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 2;
+    padding: 9px;
+    background-color: #1b4b97;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.close-icon:hover {
+    background-color: #1363df;
+}
